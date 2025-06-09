@@ -1,11 +1,11 @@
 --!strict
-local Keybind = Instance.new("Folder")
-Keybind.Parent = game.ReplicatedStorage
-Keybind.Name = "Keybind"
+local KeybindFolder = Instance.new("Folder")
+KeybindFolder.Parent = game.ReplicatedStorage
+KeybindFolder.Name = "Keybind"
 
 local ActionTemplate = Instance.new("InputAction")
 ActionTemplate.Name = "ActionTemplate"
-ActionTemplate.Parent = Keybind
+ActionTemplate.Parent = KeybindFolder
 
 local GamepadBinding = Instance.new("InputBinding")
 GamepadBinding.Name = "GamepadBinding"
@@ -45,7 +45,7 @@ local function getContext(name: string): KeybindContext
 		local context = Instance.new("InputContext")
 		context.Enabled = name == ALWAYS_ON_STATE
 		context.Name = name
-		context.Parent = Keybind
+		context.Parent = KeybindFolder
 		
 		keybinds[name] = {
 			context = context,
