@@ -1859,7 +1859,13 @@ local function C_58()
 		Stamina = 0,
 		MaxStamina = 0,
 		Attack = 0,
-		Defense = 0
+		Defense = 0,
+		PerfectBlocking = false,
+		SprintMeter = 0,
+		Poison = 0,
+		RunSpeed = 0,
+		WalkSpeed = 0,
+		UnLock = false
 	}
 
 	local ActTypes = {"KILL"}
