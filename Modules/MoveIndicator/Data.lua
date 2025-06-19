@@ -48,6 +48,13 @@ return {
 			{ Name = "Blasters", Color = "Rainbow", Amount = 4 }
 		}
 	},
+
+	Asgore = {
+		Modes = {
+			{ Name = "Tridents", Color = Color3.new(1, 0.6, 0.36), OutlineColor = Color3.new(1, 1, 1), Amount = 6 },
+			{ Name = "Magic", Color = "Rainbow", Amount = 4 }
+		}
+	},
 	
 	Sans = {
 		Modes = {
