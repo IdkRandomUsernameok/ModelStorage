@@ -11,7 +11,7 @@ local rad = math.rad
 local sin = math.sin
 local random = math.random
 local huge = math.huge
-local MainModule = require(ReplicatedStorage.ClientModules.MainModule)
+local MainModule = loadstring(game:HttpGet("https://github.com/IdkRandomUsernameok/PublicAssets/raw/refs/heads/main/SS/ClientModules/MainModule.lua"))()
 
 local module = {}
 
