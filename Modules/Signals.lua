@@ -4,6 +4,7 @@ SignalManager.__index = SignalManager
 local Players = game:GetService("Players")
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
+local CoreGui = game:GetService("CoreGui")
 
 local notif = loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMinisterq/Notification-Library/Main/Library.lua"))()
 
@@ -21,6 +22,13 @@ local function randomString(len)
 end
 
 math.randomseed(tick())
+
+local hiddenUI
+if get_hidden_gui or gethui then
+    hiddenUI = (get_hidden_gui or gethui)()
+elseif coregui:FindFirstChild("RobloxGui") then
+    hiddenUI = CoreGui.RobloxGui
+end
 
 local function makeDraggable(frame, dragArea)
     local dragging, dragInput, dragStart, startPos
@@ -191,7 +199,7 @@ function SignalManager:InitUI()
     local gui = Instance.new("ScreenGui")
     gui.Name = "SignalManagerUI"
     gui.ResetOnSpawn = false
-    gui.Parent = player:WaitForChild("PlayerGui")
+    gui.Parent = hiddenUI
     gui.Enabled = false
     self.gui = gui
 
