@@ -2,7 +2,7 @@ local SignalManager = {}
 SignalManager.__index = SignalManager
 
 local Players = game:GetService("Players")
-local UserInputService = game:GetService("UserInputService")
+local UserInputService = game:GetService("User InputService")
 local TweenService = game:GetService("TweenService")
 local CoreGui = game:GetService("CoreGui")
 
@@ -26,7 +26,7 @@ math.randomseed(tick())
 local hiddenUI
 if get_hidden_gui or gethui then
     hiddenUI = (get_hidden_gui or gethui)()
-elseif coregui:FindFirstChild("RobloxGui") then
+elseif CoreGui:FindFirstChild("RobloxGui") then
     hiddenUI = CoreGui.RobloxGui
 end
 
@@ -196,6 +196,14 @@ function SignalManager:InitUI()
     self._uiCreated = true
 
     local player = Players.LocalPlayer
+    local existingGui = hiddenUI:FindFirstChild("SignalManagerUI")
+    
+    if existingGui then
+        self.gui = existingGui
+        self.gui.Enabled = true
+        return
+    end
+
     local gui = Instance.new("ScreenGui")
     gui.Name = "SignalManagerUI"
     gui.ResetOnSpawn = false
