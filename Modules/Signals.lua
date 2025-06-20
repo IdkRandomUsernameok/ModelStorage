@@ -2,7 +2,7 @@ local SignalManager = {}
 SignalManager.__index = SignalManager
 
 local Players = game:GetService("Players")
-local UserInputService = game:GetService("User InputService")
+local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
 local CoreGui = game:GetService("CoreGui")
 
